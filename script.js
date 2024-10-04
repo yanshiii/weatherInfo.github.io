@@ -1,6 +1,7 @@
 const API_KEY = 'fadfa28f7146e830e8851ea0361e637b';
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
+const GEOCODING_API_URL = 'https://api.openweathermap.org/geo/1.0/direct';
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -100,3 +101,22 @@ function setBackground(weatherCondition) {
 }
 
 getLocation();
+
+
+
+
+
+const locationSearch = document.getElementById('location-search');
+const locationSuggestions = document.getElementById('location-suggestions');
+
+locationSearch.addEventListener('input', debounce(searchLocations, 300));
+
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
