@@ -1,4 +1,4 @@
-const API_KEY = 'fadfa28f7146e830e8851ea0361e637b';
+const API_KEY = 'your_api_key_here';
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
@@ -18,20 +18,7 @@ function showPosition(position) {
 }
 
 function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.");
-            break;
-        case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
-            break;
-        case error.TIMEOUT:
-            alert("The request to get user location timed out.");
-            break;
-        case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
-            break;
-    }
+    alert("Geolocation error: " + error.message);
 }
 
 function fetchWeatherData(lat, lon) {
@@ -81,26 +68,17 @@ function displayForecast(data) {
 
 function setBackground(weatherCondition) {
     const body = document.body;
-    switch (weatherCondition.toLowerCase()) {
-        case 'clear':
-            body.style.backgroundImage = "url('images.jpeg')";
-            break;
-        case 'clouds':
-            body.style.backgroundImage = "url('images.jpeg')";
-            break;
-        case 'rain':
-            body.style.backgroundImage = "url('images.jpeg')";
-            break;
-        case 'thunderstorm':
-            body.style.backgroundImage = "url('images.jpeg')";
-            break;
-        default:
-            body.style.backgroundImage = "url('images.jpeg')";
-    }
+    const images = {
+        clear: 'clear-sky.jpg',
+        clouds: 'cloudy.jpg',
+        rain: 'rainy.jpg',
+        thunderstorm: 'thunderstorm.jpg',
+        default: 'default-weather.jpg'
+    };
+    body.style.backgroundImage = `url('${images[weatherCondition.toLowerCase()] || images.default}')`;
 }
 
 getLocation();
-
 
 
 
