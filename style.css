@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(67, 60, 60, 0.5);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -32,7 +32,7 @@ h1, h2 {
 }
 
 .forecast-day {
-    background-color: rgba(169, 125, 203, 0.6);
+    background-color: rgba(174, 134, 204, 0.6);
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
