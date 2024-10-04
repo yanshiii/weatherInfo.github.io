@@ -18,30 +18,6 @@ body {
     text-align: center;
 }
 
-#location-search {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#location-suggestions {
-    margin-bottom: 20px;
-}
-
-#location-suggestions div {
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    margin-top: 2px;
-    border-radius: 5px;
-}
-
-#location-suggestions div:hover {
-    background-color: #f0f0f0;
-}
-
 #forecast-container {
     display: flex;
     justify-content: space-around;
