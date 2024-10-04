@@ -18,7 +18,7 @@ body {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
+h1, h2{
     color: #333;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -32,7 +32,7 @@ h1, h2 {
 }
 
 .forecast-day {
-    background-color: rgba(174, 134, 204, 0.6);
+    background-color: rgb(195 213 251);
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
